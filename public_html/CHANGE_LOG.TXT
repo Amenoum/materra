@@ -1,0 +1,26 @@
+2021.07.14
+	Implemented 'Cite and support' feature
+2021.07.03
+	CD command will now try to load a webpage if specified chapter doesn't exist
+	RUN will now follow a link if one is present in the title of the current chapter (instead of running commands in queue) if no arguments are provided
+2021.06.16
+	Bug fixes in LaTeX generation
+2021.06.13
+	Implemented user registration and discussions
+2021.06.11
+	Implemented "id" command - sets or shows current username
+2021.06.10
+	Bug fixes and improvements in LaTeX generation
+2021.05.29
+	Implemented "doc" command - shows MATERRA documentation
+2021.05.26
+	Small fixes, some improvements in LaTeX generation
+2021.05.24
+	Implemented "latex" command - generates a LaTeX source from the current article
+	Small fixes
+2021.05.18
+	Implemented "buildFigures()" - a list of figures can now be built using <build_figures> tag
+	Implemented "chlog" command - shows MATERRA change log
+	Fixed a bug in "pre" command (tag ending with </div>)
+2021.05.01
+	First published version

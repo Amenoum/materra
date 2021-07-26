@@ -1,0 +1,82 @@
+<script>
+$(document).ready(function() {	
+	root.tmp_works = function() {
+		console.log('IN TMP_WORKS');
+		$('input.chkEnable').on('click', function(e) {
+			fetch('/users/users.php?cmd=set_enabled&id='+root.cmd.local.id.val+'&ph='+root.cmd.local.id.ph+'&uid='+$(this).attr('data-id')+'&val='+($(this).is(":checked")?'1':'0'))
+			.then(
+				function(response) {
+					if (response.status != 200) {
+						console.warn('SET_ENABLED.fetch() ERROR: '+response.status);
+						return;
+					}
+					response.text().then(function (data) {
+						switch (data) {
+							case '-1':
+								root.cmd.say('Invalid admin id or password.');
+								break;
+							case '-2':
+								root.cmd.say('Missing or bad input data.');
+								break;
+							case '-3':
+								root.cmd.say('Invalid admin id or password.');
+								break;
+							case '1':
+								root.cmd.say('Done.');
+								break;
+							case '0':
+								root.cmd.say('DB Error.');
+								break;
+							default: 
+								root.cmd.say('Something went wrong.');
+								console.log(data);
+								break;
+						}
+					});
+				}
+			)
+			.catch(function(err) {
+				console.error('SET_ENABLED.fetch() NETWORK ERROR: '+err);
+			});
+		});
+		$('input.chkDiscEnable').on('click', function(e) {
+			fetch('/users/users.php?cmd=set_disc_enabled&id='+root.cmd.local.id.val+'&ph='+root.cmd.local.id.ph+'&uid='+$(this).attr('data-id')+'&val='+($(this).is(":checked")?'1':'0'))
+			.then(
+				function(response) {
+					if (response.status != 200) {
+						console.warn('SET_DISC_ENABLED.fetch() ERROR: '+response.status);
+						return;
+					}
+					response.text().then(function (data) {
+						switch (data) {
+							case '-1':
+								root.cmd.say('Invalid admin id or password.');
+								break;
+							case '-2':
+								root.cmd.say('Missing or bad input data.');
+								break;
+							case '-3':
+								root.cmd.say('Invalid admin id or password.');
+								break;
+							case '1':
+								root.cmd.say('Done.');
+								break;
+							case '0':
+								root.cmd.say('DB Error.');
+								break;
+							default: 
+								root.cmd.say('Something went wrong.');
+								console.log(data);
+								break;
+						}
+					});
+				}
+			)
+			.catch(function(err) {
+				console.error('SET_DISC_ENABLED.fetch() NETWORK ERROR: '+err);
+			});
+		});
+	}
+	setTimeout(root.tmp_works.bind(root), 1000);
+});
+</script>

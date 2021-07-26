@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MATERRA - Users</title>
+	<link rel="stylesheet" href="/main.css">
+	<script src="/MathJax-master/MathJax.js?config=TeX-MML-AM_CHTML" async=""></script>
+	<script type="text/x-mathjax-config">
+	  MathJax.Hub.Config({
+		tex2jax: {inlineMath: [["$","$"]]}
+	  });
+	  MathJax.Hub.Register.StartupHook("End", function() {
+		root.afterMathjax();
+	  });
+	</script>
+	<script src="/jquery.min.js"></script>
+	<script src="/main.js"></script>
+</head>
+<body id="0">
+<!--PLACE-->
+
+<set_body_class>admin</set_body_class>
+
+<spirit class="main_head">
+<title>MATERRA Administration</title>
+<div>Users</div>
+</spirit>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MATERRA Web - of music</title>
+	<link rel="stylesheet" href="/main.css">
+	<script src="/MathJax-master/MathJax.js?config=TeX-MML-AM_CHTML" async=""></script>
+	<script type="text/x-mathjax-config">
+	  MathJax.Hub.Config({
+		tex2jax: {inlineMath: [["$","$"]]}
+	  });
+	  MathJax.Hub.Register.StartupHook("End", function() {
+		root.afterMathjax();
+	  });
+	</script>
+	<script src="/jquery.min.js"></script>
+	<script src="/main.js"></script>
+</head>
+<body id="0">
+<!--PLACE-->
+
+<set_body_class>music</set_body_class>
+<set_body_numbering>0</set_body_numbering>
+
+<div class="spirit main_head">
+<h1>m u s i c</h1>
+</div>
+
+<spirit>
+<sub1>intro</sub1>
+Here's my music.
+
+<sub1>in sono</sub1>
+Coming up.
+
+<sub1>in scripto</sub1>
+Coming up.
+</spirit>
+
+<spirit class="noformat">
+<sub2>Song 1 (?)</sub2>
+<song>
+<pre>
+Testing... 
+Me, me me.
+</pre>
+</song>
+</spirit>
+
+<script>
+$(document).ready(function() {	
+	root.tmp_works = function() {
+		console.log('IN TMP_WORKS');
+		if (typeof ($('div.expander').html()) == 'undefined')
+			setTimeout(root.tmp_works.bind(root), 1500);
+		else {
+			$('div.expander[state="0"][idx]').each(function (idx) {
+				if ($(this).attr('idx').match(/^3\.[1-9]+/)) $(this).trigger('click');
+			});
+			$('div.expander[state="1"][idx]').each(function (idx) {
+				if ($(this).attr('idx').match(/^3\.[1-9]+/)) $(this).trigger('click');
+			});
+		}
+	}
+	setTimeout(root.tmp_works.bind(root), 1000);
+});
+</script>
+
+<div class="spirit references noformat">
+<h2>inverse references (signals)</h2>
+<div id="sreferences">
+Something completely different (?), M. Python
+</div>
+</div>
+
+</body>
+
+</html>

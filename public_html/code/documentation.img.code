@@ -1,0 +1,5 @@
+&lt;div class="<b>img</b>"&gt;&lt;a href="<b>/log/images/hires/omega_egg.svg</b>"&gt;&lt;img src="<b>/log/images/omega_egg.png</b>" alt="<b>Omega egg</b>"&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div class="<b>imgsub</b>"&gt;&lt;span class="<b>fig</b>"&gt;<b>Fig. 2</b>&lt;/span&gt;: <b>Initialization of life</b>&lt;/div&gt;
+
+&lt;div class="<b>img img_container</b>"&gt;&lt;a href="<b>/images/hires/extinctions_2_major.svg</b>" class="<b>img2</b>"&gt;&lt;img src="<b>/images/extinctions_2_major.png</b>" style="<b>height:280px;position:relative;top:8px</b>" alt=""&gt;&lt;/a&gt;&lt;a href="<b>/images/hires/earth_brain.svg</b>" class="<b>img2</b>"&gt;&lt;img src="<b>/images/earth_brain.png</b>" style="<b>height:280px</b>" alt=""&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div class="<b>imgsub</b>"&gt;&lt;span class="<b>fig</b>"&gt;<b>Fig. 5</b>&lt;/span&gt;: <b>Correlation of major extinctions (left) with Earth's mantle layers (right)</b>&lt;/div&gt;

@@ -1,0 +1,19 @@
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;&lt;head&gt;
+	&lt;meta charset="utf-8"&gt;
+	&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+	&lt;title&gt;<b>WEBPAGE_TITLE</b>&lt;/title&gt;
+	&lt;link rel="stylesheet" href="/main.css"&gt;
+	&lt;script src="/MathJax-master/MathJax.js?config=TeX-MML-AM_CHTML" async=""&gt;&lt;/script&gt;
+	&lt;script type="text/x-mathjax-config"&gt;
+	  MathJax.Hub.Config({
+		tex2jax: {inlineMath: [["$","$"]]}
+	  });
+	  MathJax.Hub.Register.StartupHook("End", function() {
+		root.afterMathjax();
+	  });
+	&lt;/script&gt;
+	&lt;script src="/jquery.min.js"&gt;&lt;/script&gt;
+	&lt;script src="/main.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body id="0"&gt;

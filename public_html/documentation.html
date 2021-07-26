@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Amenoum - of materra</title>
+	<link rel="stylesheet" href="/main.css">
+	<style>
+	table > tbody> tr > td:first-of-type {
+		font-weight: bold;
+	}
+	</style>
+	<script src="/MathJax-master/MathJax.js?config=TeX-MML-AM_CHTML" async=""></script>
+	<script type="text/x-mathjax-config">
+	  MathJax.Hub.Config({
+		tex2jax: {inlineMath: [["$","$"]]}
+	  });
+	  MathJax.Hub.Register.StartupHook("End", function() {
+		root.afterMathjax();
+	  });
+	</script>
+	<script src="/jquery.min.js"></script>
+	<script src="/main.js"></script>
+</head>
+<body id="0">
+<!--PLACE-->
+
+<log_id></log_id>
+<log_date>2021.05.27</log_date>
+<log_update>2021.06.10</log_update>
+<log_mtime></log_mtime>
+<log_author>Amenoum</log_author>
+<log_desc>MATERRA documentation.</log_desc>
+<!-- KEYWORDS ARE CASE_SENSITIVE -->
+<log_keywords></log_keywords>
+
+<set_body_class>dox</set_body_class>
+<set_body_numbering>1</set_body_numbering>
+
+<spirit class="main_head">
+<title>MATERRA Documentation</title>
+</spirit>
+
+<spirit>
+<sub1>Setup</sub1>
+<div timerel>
+<u>NOTE</u>: <b>MATERRA</b> should be installed in a root directory of a domain or a subdomain, otherwise it will be necessary to manually modify file references (links) in <b>js</b> files.
+</div>
+<ol>
+<li>Copy the contents of the <b>public_html</b> folder to your website root directory (generally <b>public_html</b>), </li>
+<li>if you plan to use user registration, copy [the empty] <b>materra_db</b> folder to the same directory holding the <b>public_html</b> folder (or update <b>users/users.settings.inc.php</b> <b>DB_USERS</b> constant with a path where you want users database to be stored), </li>
+<li>run <b>setup.php</b> (ie. by visiting <b>https://yourwebsite.org/setup.php</b> where <b>yourwebsite.org</b> should be replaced with your domain or subdomain name).</li>
+</ol>
+<div timerel>
+Optional (changing settings): 
+Changing settings (for cache, etc.) is done by editing files ending with <b>settings.inc.php</b> (ie. <b>check.settings.inc.php</b>). 
+Each such file affects only specific function or area of the website (ie. <b>check.settings.inc.php</b> provides settings for <b>check.php</b> which is used to check for updates, 
+one can open <b>.php</b> files in a text editor to see what they are used for). 
+One may also want to edit files ending with <b>header.inc.php</b>, as these contain webpage headers.
+</div>
+Note that, even if enabled, user registration will not be possible before the admin account is registered. Admin id (username) must be specified in <b>users/users.settings.inc.php</b>, by updating 
+the <b>ADMIN_ID</b> constant. Afterwards, you can use ID command in MATERRA to change your id to specified admin id and then REG command to register the account.
+
+<sub1>Usage</sub1>
+Usage of MATERRA is simple. 
+Type "<b>?</b>" or "<b>help</b>" (without quotes) in the command line interface (CLI) for a list of commands and additional help on usage. 
+While MATERRA supports creation, editing and upload of webpages through the web interface, prior to upload, content is stored in local browser storage which may not be reliable. 
+Thus, for any serious work it is recommended to use a text editor (ie. Notepad++) to create and edit webpages.
+
+<sub1>Creation of webpages in a text editor</sub1>
+Apart from the main page (<b>/index.html</b>), webpages in MATERRA do not have to have a html header/footer. However, this is recommended as it will enable direct access to the webpage. 
+This header should look like this:
+<figure>
+<figcaption id="code_get"><div class="code_expander" data-state="0" data-src="/code/documentation.head.code">Click here to show the header code +</div></figcaption>
+<pre aria-labeledby="code_get" aria-describedby="code_get_desc">
+<code contenteditable="true" tabindex="0" spellcheck="false">
+</code>
+</pre>
+</figure>
+Here, <b>WEBPAGE_TITLE</b> should be replaced with the actual title of a webpage. 
+If html header is added, the html footer should be added too:
+<figure>
+<figcaption id="code_get2"><div class="code_expander" data-state="0" data-src="/code/documentation.footer.code">Click here to show the footer code +</div></figcaption>
+<pre aria-labeledby="code_get2" aria-describedby="code_get2_desc">
+<code contenteditable="true" tabindex="0" spellcheck="false">
+</code>
+</pre>
+</figure>
+The article should then be written in between (between the starting (<b>&lt;body&gt;</b>) and closing (<b>&lt;/body&gt;</b>) body tag). 
+It is not required, but it is also recommended to define author name, keywords and other details using specific tags, like this:
+<figure>
+<figcaption id="code_get3"><div class="code_expander" data-state="0" data-src="/code/documentation.tags.code">Click here to show the code +</div></figcaption>
+<pre aria-labeledby="code_get3" aria-describedby="code_get3_desc">
+<code contenteditable="true" tabindex="0" spellcheck="false">
+</code>
+</pre>
+</figure>
+Use <b>log_id</b> tag only if you want MATERRA to generate a page header showing article creation date, date of last update and author name. The content of the tag (in this case '22') is 
+irrelevant and can be left empty.
+Here is a list of tags that may be used here:
+<table>
+<tr><th>tag</th><th>description</th><th>additional notes</th></tr>
+<tr><td>log_date</td><td>date of article creation</td><td></td></tr>
+<tr><td>log_update</td><td>date of last update</td><td>by default, this is filled automatically and should be left empty</td></tr>
+<tr><td>log_mtime</td><td>file modification date</td><td>by default, this is filled automatically and should be left empty</td></tr>
+<tr><td>log_author</td><td>author name</td><td>can contain additional tags - <b>log_address</b> and <b>log_email</b>, specifying affiliation or address and email, this data is used in LaTeX generation. <br noformat>In case of multiple authors, use one <b>log_author</b> tag for each author.</td></tr>
+<tr><td>log_desc</td><td>short description of the work</td><td>useful if writing a log type webpage, this will then be used in log index</td></tr>
+<tr><td>log_category</td><td>category</td><td>useful for log type webpages, used in log index if categories are enabled</td></tr>
+<tr><td>log_tags</td><td>keywords</td><td>used in log index and LaTeX generation (as keywords)</td></tr>
+<tr><td>log_keywords</td><td>words to highlight</td><td>case sensitive, these phrases will be highlighted (<b>bold</b>) in the article</td></tr>
+<tr><td>log_cls</td><td>document class, ie. <em>article</em></td><td>used in LaTeX generation</td></tr>
+<tr><td>cite_year</td><td>year of publication</td><td>used for citations, by default, year will be extracted from <b>log_update</b> or <b>log_date</b>, so it is unnecessary to specify this if <b>log_date</b> is specified</td></tr>
+<tr><td>cite_doi</td><td>alternative link to article</td><td>used for citations</td></tr>
+<tr><td>cite_contrib</td><td>an address for contributions</td><td>this can be a wallet or web (URL) address for support</td></tr>
+<tr><td>set_body_numbering</td><td>controls auto-numbering of chapters</td><td>set to <em>0</em> to turn off automatic numbering</td></tr>
+<tr><td>no_discussion</td><td>controls article comments</td><td>when specified and not 0, turns off comments</td></tr>
+</table>
+
+<sub2>Defining title and subtitle</sub2>
+A title and subtitle should be defined like this:
+<figure>
+<figcaption id="code_get4"><div class="code_expander" data-state="0" data-src="/code/documentation.title.code">Click here to show the code +</div></figcaption>
+<pre aria-labeledby="code_get4" aria-describedby="code_get4_desc">
+<code contenteditable="true" tabindex="0" spellcheck="false">
+</code>
+</pre>
+</figure>
+Here, <b>div</b> tag, containing the subtitle, is optional.
+
+<sub2>Writing content</sub2>
+After title definition, article content should be enclosed in a <b>spirit</b> tag, like this:
+<figure>
+<figcaption id="code_get5"><div class="code_expander" data-state="0" data-src="/code/documentation.spirit.code">Click here to show the code +</div></figcaption>
+<pre aria-labeledby="code_get5" aria-describedby="code_get5_desc">
+<code contenteditable="true" tabindex="0" spellcheck="false">
+</code>
+</pre>
+</figure>
+Use <b>sub1</b> tag for main chapters and <b>sub2</b> and <b>sub3</b> tags for sub-chapters. The <b>no_numbering</b> attribute is optional and it will leave the chapter unnumbered. 
+Tag <b>sub2</b> should always follow after <b>sub1</b>, while <b>sub3</b> should always follow after <b>sub2</b>, otherwise the system might get <em>confused</em>. 
+For synonyms, just use the <b>=</b> sign, as shown in the example.
+Content will be formatted automatically. To start a new paragraph, start the sentence on a new line and make sure there is one empty space character after the last sentence.
+
+<sub2>Writing equations</sub2>
+To write equations, use the <b>e</b> tag and mathjax (tex/latex) syntax. Ie. this:
+<figure>
+<figcaption id="code_get5a"><div class="code_expander" data-state="0" data-src="/code/documentation.e.code">Click here to show the code +</div></figcaption>
+<pre aria-labeledby="code_get5a" aria-describedby="code_get5a_desc">
+<code contenteditable="true" tabindex="0" spellcheck="false">
+</code>
+</pre>
+</figure>
+will produce:
+<e>$\displaystyle E = {m \over \sqrt{1 - {\beta}^2}} c^2$</e>
+
+<sub2>References</sub2>
+Use <b>a</b> html tag for references, ie.:
+<figure>
+<figcaption id="code_get5b"><div class="code_expander" data-state="0" data-src="/code/documentation.ref.code">Click here to show the code +</div></figcaption>
+<pre aria-labeledby="code_get5b" aria-describedby="code_get5b_desc">
+<code contenteditable="true" tabindex="0" spellcheck="false">
+</code>
+</pre>
+</figure>
+will produce:<br noformat><br noformat>
+For more consult <a href="https://doi.org/10.1088/0026-1394/41/5/S04" data-notitle="1" title="Experimental tests of Coulomb's Law and the photon rest mass (2004), L-C. Tu et al">Yukawa, Proca</a><br noformat><br noformat>
+Here, <b>href</b> attribute is used for a link to cited work. The attribute should be present for offline works too, but it should be left empty in that case (<b>href</b>=""). 
+The attribute <b>data-notitle</b> set to 1 signals the engine to use content specified in <b>title</b> attribute when generating references, rather than the content of <b>a</b> tag (Yukawa, Proca). 
+For regular links add attribute <b>noref</b> with value of 1 to the <b>a</b> tag (<b>noref</b>="1").
+
+<sub2>Lists and tables</sub2>
+Use <b>ul</b> html tag for unnumbered (bulleted) lists, <b>ol</b> tag for numbered lists and <b>table</b> for tables, ie.:
+<figure>
+<figcaption id="code_get5c"><div class="code_expander" data-state="0" data-src="/code/documentation.lists.code">Click here to show the code +</div></figcaption>
+<pre aria-labeledby="code_get5c" aria-describedby="code_get5c_desc">
+<code contenteditable="true" tabindex="0" spellcheck="false">
+</code>
+</pre>
+</figure>
+produces:
+<ul>
+<li>item 1</li>
+<li>item 2</li>
+</ul>
+
+<ol>
+<li>item 1</li>
+<li>item 2</li>
+</ol>
+
+<table class="small">
+<tr><th>heading 1</th><th>heading 2</th><th>heading 3</th></tr>
+<tr><td>item 1</td><td>item 2</td><td>item 3</td></tr>
+</table>
+
+For LaTeX exports, one may define font size for the table by defining the <b>latex-fontsize</b> attribute, the value of which may be one of these: 
+<span class="nobold">tiny, scriptsize, footnotesize, small, normalsize, large, Large, LARGE, huge, Huge</span>. 
+One may also define column widths for a LaTeX table by specifying the <b>latex-width</b> attribute on the appropriate <b>th</b> tag. If this value is purely numeric (ie. "0.6"), a 
+string <b>\textwidth</b> will be appended to the number.
+
+<sub2>Notes (boxed content)</sub2>
+To add notes one may use the <b>div</b> tag with attribute <b>timerel</b>:
+<figure>
+<figcaption id="code_get6b"><div class="code_expander" data-state="0" data-src="/code/documentation.timerel.code">Click here to show the code +</div></figcaption>
+<pre aria-labeledby="code_get6b" aria-describedby="code_get6b_desc">
+<code contenteditable="true" tabindex="0" spellcheck="false">
+</code>
+</pre>
+</figure>
+producing:
+<div timerel>
+Sample note.
+</div>
+
+<div timerel class="past">
+Note on a red background.
+</div>
+
+<div timerel class="future">
+Note on a blue background.
+</div>
+
+<sub2>Figures (images)</sub2>
+Images can be inserted like in the following example:
+<figure>
+<figcaption id="code_get6c"><div class="code_expander" data-state="0" data-src="/code/documentation.img.code">Click here to show the code +</div></figcaption>
+<pre aria-labeledby="code_get6c" aria-describedby="code_get6c_desc">
+<code contenteditable="true" tabindex="0" spellcheck="false">
+</code>
+</pre>
+</figure>
+This produces:
+<div class="img"><a href="/log/images/hires/omega_egg.svg"><img src="/log/images/omega_egg.png" alt="Omega egg"></a></div>
+<div class="imgsub"><span class="fig">Fig. 2</span>: Initialization of life</div>
+
+<div class="img img_container"><a href="/images/hires/extinctions_2_major.svg" class="img2"><img src="/images/extinctions_2_major.png" style="height:280px;position:relative;top:8px" alt=""></a><a href="/images/hires/earth_brain.svg" class="img2"><img src="/images/earth_brain.png" style="height:280px" alt=""></a></div>
+<div class="imgsub"><span class="fig">Fig. 5</span>: Correlation of major extinctions (left) with Earth's mantle layers (right)</div>
+Here, the <b>src</b> attribute of <b>img</b> tag contains a link to the image to be shown, while <b>href</b> attribute of the optional <b>a</b> tag may contain a link to the high-resolution source. 
+The <b>alt</b> attribute of <b>img</b> specifies text that will be shown in case the image cannot be rendered for some reason. 
+The <b>style</b> attribute is optional and may be used to fine-tune the positioning and size of images. 
+For LaTeX exports, one may also define image width by specifying the <b>latex-width</b> attribute for the <b>img</b> tag. If this value is purely numeric (ie. "0.6"), a 
+string <b>\textwidth</b> will be appended to the number.
+
+<sub2>Writing definitions</sub2>
+It is recommended to put definitions into a separate <b>spirit</b> tag of class <em>definitions</em>, ie.:
+<figure>
+<figcaption id="code_get6a"><div class="code_expander" data-state="0" data-src="/code/documentation.def.code">Click here to show the code +</div></figcaption>
+<pre aria-labeledby="code_get6a" aria-describedby="code_get6a_desc">
+<code contenteditable="true" tabindex="0" spellcheck="false">
+</code>
+</pre>
+</figure>
+This way, the definitions will be processed by the system so they can be accessed through commands <em>define</em> and <em>explain</em>, even when browsing other webpages of the website.
+
+<sub2>Updates</sub2>
+It is recommended to let users know if a webpage has been updated some time after creation. In order to do so, insert the <b>update</b> tag somewhere between the 
+starting <b>spirit</b> (&lt;spirit&gt;) and ending <b>spirit</b> (&lt;/spirit&gt;) tag, like this:
+<figure>
+<figcaption id="code_get_update"><div class="code_expander" data-state="0" data-src="/code/documentation.update.code">Click here to show the code +</div></figcaption>
+<pre aria-labeledby="code_get_update" aria-describedby="code_get_update_desc">
+<code contenteditable="true" tabindex="0" spellcheck="false">
+</code>
+</pre>
+</figure>
+Here the <b>date</b> attribute specifies the date of the update, while content of the <b>update</b> tag specifies the title that will be shown in the <b>Change Log</b>. 
+Usually, <b>Change Log</b> will also contain a link to the update, so one may want to position the <b>update</b> tag right above the updated content. The link generation can be turned off by 
+specifying <b>nolink</b> attribute with a value of 1.
+
+<sub2>Indexing and menu updates</sub2>
+If the article file (which should have a <b>.html</b> extension) is in a <b>log</b> folder, it will be automatically indexed next time the Log is accessed on the web (although, if 
+cache is <b>on</b> the change may not be visible immediately, unless the contents of the <b>cache</b> subfolder is cleared). 
+Other webpages must be manually added to the site menu. For that purpose one should edit <b>/menu.json</b> file and add the webpage file name and title, while conserving the present structure. 
+
+<sub2>Additional info</sub2>
+For the LaTeX export feature, one may want to define a separate <b>spirit</b> tag containing the abstract, before the <b>spirit</b> tag with other content. In that case, simply add 
+the class <em>abstract</em> to the tag, ie.
+<figure>
+<figcaption id="code_get6"><div class="code_expander" data-state="0" data-src="/code/documentation.abstract.code">Click here to show the code +</div></figcaption>
+<pre aria-labeledby="code_get6" aria-describedby="code_get6_desc">
+<code contenteditable="true" tabindex="0" spellcheck="false">
+</code>
+</pre>
+</figure>
+Similarly, class <em>postulates</em> may be used for postulates. 
+Written text will be auto-formatted, along with line breaks. To force a line break (newline), use <b>br</b> tag with <b>noformat</b> attribute (&lt;<b>br noformat</b>&gt;).
+Some constants are predefined in <b>universe.js</b> file. Additional constants may be added, as described in that file. 
+To print the value of constants, one can use the <b>c</b> tag, ie.:
+<figure>
+<figcaption id="code_get7"><div class="code_expander" data-state="0" data-src="/code/documentation.const.code">Click here to show the code +</div></figcaption>
+<pre aria-labeledby="code_get7" aria-describedby="code_get7_desc">
+<code contenteditable="true" tabindex="0" spellcheck="false">
+</code>
+</pre>
+</figure>
+
+<update date="2021.06.14" nolink="1">Updated <em>Setup</em> and <em>Writing content</em> chapters, added description of <em>no_discussion</em> tag.</update>
+<update date="2021.06.10" nolink="1">Added <em>Updates</em> chapter, updated chapters <em>Lists and tables</em> and <em>Figures (images)</em>.</update>
+</spirit>
+
+<script>
+$(document).ready(function() {	
+	root.tmp_works = function() {
+		console.log('IN TMP_WORKS');
+		if (typeof ($('div.expander').html()) == 'undefined')
+			setTimeout(root.tmp_works.bind(root), 1500);
+		else {
+			$('div.code_expander[data-state="0"]').each(function (idx) {
+				$(this).trigger('click');
+			});
+		}
+	}
+	setTimeout(root.tmp_works.bind(root), 1000);
+});
+</script>
+
+</body>
+
+</html>

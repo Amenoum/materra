@@ -1,0 +1,14 @@
+&lt;ul&gt;
+&lt;li&gt;<b>item 1</b>&lt;/li&gt;
+&lt;li&gt;<b>item 2</b>&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;<b>item 1</b>&lt;/li&gt;
+&lt;li&gt;<b>item 2</b>&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;table class="<b>small</b>"&gt;
+&lt;tr&gt;&lt;th&gt;<b>heading 1</b>&lt;/th&gt;&lt;th&gt;<b>heading 2</b>&lt;/th&gt;&lt;th&gt;<b>heading 3</b>&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;<b>item 1</b>&lt;/td&gt;&lt;td&gt;<b>item 2</b>&lt;/td&gt;&lt;td&gt;<b>item 3</b>&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;

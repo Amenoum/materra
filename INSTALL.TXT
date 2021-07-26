@@ -1,0 +1,34 @@
+******************************
+*                            *
+*    MATERRA Installation    *
+*                            *
+******************************
+
+NOTE: MATERRA should be installed in a root directory of a domain or a subdomain, 
+otherwise it will be necessary to manually modify file references (links) in js files.
+
+
+1. Copy the contents of public_html folder to your website root directory (generally public_html)
+
+2. If you plan to allow user registration, copy the empty materra_db folder to the same directory holding the public_html folder 
+	(or update users/users.settings.inc.php DB_USERS constant with a path where you want users database to be stored)
+
+3. Run setup.php (ie. by visiting https://yourwebsite.com/setup.php where yourwebsite.com should be replaced with your domain or subdomain name)
+
+
+Optional (changing settings): 
+
+	If you want to change settings (for cache, etc.) you can do so by editing files ending with settings.inc.php (ie. check.settings.inc.php). 
+	Each such file affects only specific function or area of the website (ie. check.settings.inc.php provides settings for check.php which is used to check for updates, 
+	you can open .php files in a text editor to see what they are used for).
+
+
+Note that, even if enabled, user registration will not be possible before the admin account is registered. 
+Admin id (username) must be specified in users/users.settings.inc.php, by updating 
+the ADMIN_ID constant. 
+Afterwards, you can use ID command in MATERRA to change your id to specified admin id and then REG command to register the account.
+
+
+	
+Once installed, type "?" or "help" in the command line interface (CLI) for a list of commands. 
+For additional documentation use "doc" command.

@@ -1,0 +1,42 @@
+{
+	"menuitem": [
+		{
+			"title"	: "Home",
+			"url"	: "/index.html",
+			"alturl": "/"
+		},
+		{
+			"title" : "Something New 1",
+			"url"	: "/dummy1.html"
+		},
+		{
+			"title" : "Something New 2",
+			"url"	: "/dummy2.html"
+		},
+		{
+			"title"	: "Log",
+			"url"	: "/log/index.php"
+		},
+		{
+			"title"	: "BLog",
+			"url"	: "/blog/index.php"
+		},
+		{
+			"title"	: "Downloads",
+			"url"	: "/downloads/downloads.html"
+		},
+		{
+			"title"	: "Music",
+			"url"	: "/music/music.html"
+		},
+		{
+			"title"	: "QA",
+			"url"	: "/answers/index.php"
+		},
+		{
+			"title" : "Credits",
+			"url"	: "/authors/Creator.html#credits",
+			"class"	: "menuright"
+		}
+	]
+}

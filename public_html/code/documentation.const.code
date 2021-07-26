@@ -1,0 +1,9 @@
+&lt;c&gt;<b>2</b> * const('<b>pi</b>')&lt;/c&gt;
+&lt;c&gt;const('<b>self.mass.electrons.neptune.1</b>', <b>false</b>, <b>1e24</b>, <b>3</b>)&lt;/c&gt;
+
+const function has 4 optional parameters: const(<em>str</em>, <em>showunit</em>=true, <em>divider</em>=1, <em>round</em>=-1, <em>html</em>=false)
+*	str	= string				// constant name
+*	showunit = boolean			// append unit to value (ie. 'kg'), <b>true</b> by default 
+*	divider = number			// divides the constant by this number, default 1
+*	round = int					// rounds the constant to specified number of decimals (-1 = default = no rounding)
+*	html = boolean				// uses html for exponents (ie. 10^24 will be converted to 10<sup>24</sup>)

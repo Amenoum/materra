@@ -1,0 +1,9 @@
+﻿[THIS MUST BE IN QUESTION/ANSWER FORMAT]
+[IN CASE OF MULTIPLE ANSWERS, THESE SHOULD BE SEPARATED BY ||. YOU CAN USE NEWLINES BUT BREAK ON THE SEPARATOR.]
+[A LINE CANNOT BEGIN WITH ||, IT CAN ONLY END WITH ||.]
+[IN CASE OF MULTIPLE QUESTIONS FOR THE SAME SET OF ANSWERS, THESE SHOULD BE SEPARATED WITH ||]
+
+Who are you?||What is your name?
+Materra.||My name is of no importance.||Whatever you want me to be.
+Who is Materra?
+That's me, a mainframe behind the MATERRA OS.

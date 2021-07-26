@@ -1,0 +1,13 @@
+&lt;log_id&gt;<b>22</b>&lt;/log_id&gt;
+&lt;log_date&gt;<b>2020.11.24</b>&lt;/log_date&gt;
+&lt;log_update&gt;&lt;/log_update&gt;
+&lt;log_mtime&gt;&lt;/log_mtime&gt;
+&lt;log_author&gt;<b>Author name</b>
+	&lt;log_address&gt;<b>Affiliation/address</b>&lt;/log_address&gt;
+	&lt;log_email&gt;<b>some{EAT}email.com</b>&lt;/log_email&gt;
+&lt;/log_author&gt;
+&lt;log_desc&gt;<b>On the evolution of life.</b>&lt;/log_desc&gt;
+&lt;log_category&gt;<b>biology</b>&lt;/log_category&gt;
+&lt;log_tags&gt;<b>complete relativity</b>, <b>life</b>&lt;/log_tags&gt;
+&lt;!-- KEYWORDS ARE CASE_SENSITIVE --&gt;
+&lt;log_keywords&gt;<b>homo.sapiens</b>, <b>homo.beta</b>&lt;/log_keywords&gt;

@@ -1,0 +1,41 @@
+﻿[THIS MUST BE IN QUESTION/ANSWER FORMAT, MUST BEGIN WITH QUESTION, QUESTIONS MUST END WITH A QUESTION MARK - ?]
+[IN CASE OF MULTIPLE QUESTIONS FOR THE SAME ANSWER, THESE SHOULD BE SEPARATED WITH ||]
+[IF YOU NEED TO USE || IN TEXT, USE HTML ENCODING]
+[IT IS RECOMMENDED NOT TO USE LINE BREAKS IN THE MIDDLE OF A SENTENCE]
+
+What is MATERRA?
+MATERRA is a web publishing platform with strong emphasis on user/system interaction and customization possibilities. 
+For example, visitors to a website running on MATERRA can add new elements to a webpage, and even create new webpages which will automatically be accessible from the website menu. 
+<div timerel>
+Note that such changes are private - stored locally, in browser storage space.
+</div>
+Designed originally for the Amenoum website, but with reusability in mind, it is easy to setup (no databases necessary for its main functionality) and straight forward to use. 
+At the user end, MATERRA is powered by MATERRA OS, an operating system written in JS/<a href="https://jquery.com">jQuery</a> which provides numerous interaction possibilities through its command line interface (CLI).
+The word Materra is a composite of latin words <em>mater</em> (mother) and <em>Terra</em> (Earth).
+
+What are the features of MATERRA?||What are MATERRA features?
+- easy to setup and use
+- print (PDF) friendly
+- automatic text formatting
+- automatic numbering
+- automatic index generation
+- automatic generation of references
+- automatic <em>change log</em> generation
+- rendering of math equations (using <a href="https://mathjax.org">MathJax</a>)
+- LaTeX export (from v2021.05.24)
+- collapsable text blocks
+- command line interface (CLI)
+- caching, with page-specific customization
+- extendable, through plugins
+- ...
+
+What user platforms does MATERRA support?||What platforms does MATERRA support?
+MATERRA is platform independent, although, usage of the command line interface (CLI) is recommended, and best experienced, on desktop (non-touchscreen) platforms. 
+Also, due to reliance on newer javascript capabilities, it might not function properly on old web browsers.
+
+What server platforms does MATERRA support?
+MATERRA backend is written in PHP, with optional usage of SQLite databases. It thus works on all platforms where PHP can be installed.
+
+What are requirements for MATERRA?||What are MATERRA requirements?
+On server side, MATERRA requires PHP. It is tested on version 5.6, but it would probably work on older versions too. 
+On client side, any newer web browser should suffice. However, the system has been exhaustively tested on Firefox so that one is recommended.

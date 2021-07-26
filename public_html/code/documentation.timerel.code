@@ -1,0 +1,11 @@
+&lt;div timerel&gt;
+<b>Sample note.</b>
+&lt;/div&gt;
+
+&lt;div timerel class="<b>past</b>"&gt;
+<b>Note on a red background.</b>
+&lt;/div&gt;
+
+&lt;div timerel class="<b>future</b>"&gt;
+<b>Note on a blue background.</b>
+&lt;/div&gt;
